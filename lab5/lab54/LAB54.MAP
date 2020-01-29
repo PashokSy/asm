@@ -1,0 +1,10 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 0003FH 00040H STACKSEG           STACK
+ 00040H 00123H 000E4H DSEG               DATA
+ 00130H 00399H 0026AH CSEG               CODE
+
+Program entry point at 0013:0000
+Warning: No stack
+
