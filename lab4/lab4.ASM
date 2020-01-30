@@ -274,7 +274,7 @@ FIND_COORDINATES PROC
 	MOV		SI,J
 	SHL		SI,1
 	
-    MOV		AX,MAS[BX+SI]		; ВЗЯТЬ ЭЛЕМЕНТ МАССИВА ПО АДРЕСУ
+    MOV		AX,MASCP[BX+SI]		; ВЗЯТЬ ЭЛЕМЕНТ МАССИВА ПО АДРЕСУ
 	MOV		BX,SRCH	
 	CMP		J,4
 	JNE	   CONTINUE_LINE
