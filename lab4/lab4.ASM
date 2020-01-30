@@ -16,7 +16,8 @@ DSEG SEGMENT PARA PUBLIC "DATA"
 	MES10 DB	" ) $"
 	MES11 DB	" $"
 	N 	 EQU	16
-	MAS  DW 	17 DUP (?) 
+	MAS  DW 	17 DUP (?)
+	MASCP DW	17 DUP (?)
 	SRCH DW 	?
 	TMP  DW 	?
 	OUTPT DW	?
@@ -156,6 +157,15 @@ CSEG     SEGMENT PARA PUBLIC "CODE"
  ARRAY_MAX_PROC ENDP
 ;--------------------------------------------------------------------------
  ARRAY_SORT_PROC PROC 
+    XOR		CX,CX
+    MOV		CX,N
+    MOV 	BX,0
+;$-11:
+    MOV		AX,MAS[BX]
+    MOV		MASCP[BX],AX
+    ADD		BX,2
+    LOOP	$-11
+ 
     XOR    CX,CX	;ОЧИСТКА СЧЕТЧИКА
    START_SORT:
 	MOV    CX,N		; КОЛ-ВО ЭЛЕМЕНТОВ МАССИВА В СЧЕТЧИК
@@ -298,6 +308,7 @@ FIND_COORDINATES PROC
 	RET
  FIND_COORDINATES ENDP
 ;--------------------------------------------------------------------------
+
 
 CSEG ENDS   ; КОНЕЦ СЕГМЕНТА КОДА
 END MAIN	; ВЫХОД ИЗ ПРОГРАММЫ
