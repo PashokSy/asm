@@ -1,5 +1,5 @@
 ;* СОЗДАНИЕ СЕГМЕНТА СТЭКА *
-STACKSEG SEGMENT PARA PUBLIC "STACK"
+STACKSEG SEGMENT PARA STACK "STACK"
 	     DW      32   DUP(0)
 STACKSEG ENDS
 ;* СОЗДАНИЕ СЕГМЕНТА ДАННЫХ *
